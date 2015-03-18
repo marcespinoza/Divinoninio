@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff9d9d9d">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="340dp"
+        android:id="@+id/sticky"
+        android:background="@drawable/sticky"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textoAviso"
+        android:gravity="center"
+        android:freezesText="true"
+        android:layout_alignTop="@+id/sticky"
+        android:layout_alignLeft="@+id/sticky"
+        android:layout_alignStart="@+id/sticky"
+        android:layout_alignBottom="@+id/sticky"
+        android:layout_alignRight="@+id/sticky"
+        android:layout_alignEnd="@+id/sticky" />
+
+    <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+</RelativeLayout>

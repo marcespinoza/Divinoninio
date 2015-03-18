@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Divino niño</string>
+    <string name="seccion1">Inicio</string>
+    <string name="seccion2">Avisos</string>
+    <string name="seccion3">Oraciones</string>
+    <string name="seccion4">Testimonios</string>
+    <string name="seccion5">Galeria</string>
+    <string name="seccion6">Como llegar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="nav_drawer_items">
+        <item >Inicio</item>
+        <item >Avisos</item>
+        <item >Oraciones</item>
+
+    </string-array>
+
+    <!-- Iconos de los items -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/inicio</item>
+        <item>@drawable/avisos</item>
+        <item>@drawable/oraciones</item>
+
+    </array>
+
+</resources>
