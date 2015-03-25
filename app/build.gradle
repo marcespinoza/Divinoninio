@@ -12,12 +12,26 @@ android {
         versionCode 5
         versionName "3.0"
     }
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+        }
+
+        myConfigs {
+            storeFile file("D:/Android/App divino niño/divinoniniofsa.jks")
+            storePassword "divinoniniofsa"
+            keyAlias "divinoniniofsa"
+            keyPassword "divinoniniofsa"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfigs
         }
     }
+
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
@@ -33,5 +47,5 @@ dependencies {
     compile 'com.inthecheesefactory.thecheeselibrary:stated-fragment-support-v4:0.9.1'
     compile 'com.github.traex.expandablelayout:library:1.2.2'
     compile files('libs/universal-image-loader-1.9.3.jar')
-
-        }
+    compile 'com.google.android.gms:play-services:6.5.87'
+}

@@ -120,6 +120,21 @@ public class MainActivity extends ActionBarActivity
             }
         }
 
+        if(position==4){
+            fragment = fragmentManager.findFragmentByTag("fragment5");
+            Log.i("instancia","instancia "+ fragment);
+            if(fragment==null){
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container,new fragment5(),"fragment5")
+                        .addToBackStack(null)
+                        .commit();
+            }else{
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment, "fragment5")
+                        .commit();
+            }
+        }
+
 
 
         // update the main content by replacing fragments
