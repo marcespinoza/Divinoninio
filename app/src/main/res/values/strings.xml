@@ -12,11 +12,100 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="oracion">Niño amable de mi vida\n
+                     Consuelo de los cristianos\n
+                     La gracia que necesito\n
+                    Pongo en tus benditas manos.\n
+                   Padre Nuestro...\n
+                   Tu que sabes mis pesares\n
+                   Pues todos te los confío\n
+                   Da la paz a los turbados\n
+                   Y alivio al corazón mío.\n
+                   Dios te salve María...\n
+                   Y aunque tu amor no merezca\n
+                  No recurriré a ti en vano\n
+                  Pues eres Hijo de Dios\n
+                  Y auxilio de los cristianos.\n
+                  Gloria al Padre...\n
+                  Divino Niño Jesús Bendecidnos.</string>
+<string name="tiemposDificiles">Divino Niño Jesús\n
+Tengo mil dificultades: ayúdame.\n
+De los enemigos del alma: sálvame.\n
+En mis desaciertos: ilumíname.\n
+En mis dudas y penas: confórtame.\n
+En mis soledades: acompáñame.\n
+En mis enfermedades: fortaléceme.\n
+Cuando me desprecien: anímame.\n
+En las tentaciones: defiéndeme.\n
+En las horas difíciles: consuélame.\n
+Con tu corazón paternal: ámame.\n
+Con tu inmenso poder: protégeme.\n
+Y en tus brazos al expirar: recíbeme.\n
+  Amén.</string>
+  <string name="unminuto">Bendíceme, Niño Jesús y ruego por mí sin cesar.\n
+  En las tentaciones: defiéndeme.\n
+  En las horas difíciles: consuéla\n
+   En las tentaciones: defiéndeme.\n
+   En las horas difíciles: consuéla\n
+  Aleja de mi hoy y siempre el pecado.\n
+  Si tropiezo, tiende tu mano hacia mí.\n
+  Si cien veces caigo, cien veces levántame.\n
+  Si yo te olvido, tú no te olvides de mí.\n
+  Si me dejas Niño, ¿Qué será de mí?\n
+  En los peligros del mundo asísteme.\n
+  Quiero vivir y morir bajo tu manto..\n
+  Quiero que mi vida te haga sonreír.\n
+  Mírame con compasión, no me dejes Jesús mío.\n
+  Y, al fin, sal a recibirme y llévame junto a ti.\n
+  Tu bendición me acompañe hoy y siempre.\n
+   Amén. Aleluya. \n
+   (Gloria al Padre).</string>
+   <string name="libredepeligros">
+       Señor Dios, Rey Omnipotente: en tus manos\n
+        están puestas todas las cosas.  Si quieres \n
+        salvar a tu pueblo nadie puede resistir a \n
+        tu voluntad.  Tú hiciste el cielo y la Tierra\n
+         y todo cuanto en ellos se contiene. Tú eres\n
+        el dueño de todas las cosas. Quién podrá \n
+        pues resistir a tu Majestad?  Señor Dios de\n
+        nuestros padres: ten misericordia de tu pueblo \n
+        porque los enemigos del alma quieren perdernos y\n
+         las dificultades que se nos presentan son muy\n
+         grandes.  Tú has dicho: "Pedid y se os dará.\n
+         El que pide recibe.Pero Pedid con fe". Escucha\n
+         pues nuestras oraciones. Perdona nuestras culpas.\n
+         Aleja de nosotros los castigos que merecemos y haz \n
+         que nuestro Llanto se convierta en alegría, para que\n
+         viviendo alabemos tu Santo Nombre y continuemos\n
+         alabándolo eternamente en el cielo. Amén.</string>
+         <string name="plegaria">
+         Niño Jesús: Tú eres el Rey de la Paz, ayúdame a\n
+         Aceptar sin amarguras las cosas que no puedo cambiar.\n
+         Tú eres la Fortaleza del cristiano; dame valor para\n
+         Transformar aquello que en mí debe mejorar.\n
+         Tú eres la sabiduría eterna; enséñame en cada instante\n
+         cómo debo obrar para agradar más a Dios y\n
+         Hacer mayor bien a las demás personas.\n
+         Te lo suplico, por los méritos de tu infancia a Ti que\n
+         vives y reinas por los siglos de los siglos.\n
+         Amén.</string>
+           <string name="oyeatusalvador">
+        Sigo tus luchas y quiero ayudarte\n
+        Junto a Mí no desesperes.\n
+       Donde yo estoy no hay que temer.\n
+       Confía en mí y vencerás.\n
+       Quien me ama asegura su salvación.\n
+       Ante mí huyen el pecado y el infierno.\n
+       La victoria será de quien tenga fe.\n
+       "Según sea tu fe, así serán las cosas\n
+        que te sucederán".  </string>
 
     <string-array name="nav_drawer_items">
         <item >Inicio</item>
         <item >Avisos</item>
         <item >Oraciones</item>
+        <item >Testimonios</item>
+        <item >Como llegar</item>
 
     </string-array>
 
@@ -25,7 +114,12 @@
         <item>@drawable/inicio</item>
         <item>@drawable/avisos</item>
         <item>@drawable/oraciones</item>
-
+        <item>@drawable/testimonios</item>
+        <item>@drawable/mapa</item>
     </array>
+    <string name="title_activity_galeria">Galeria</string>
+
+    <string name="hello_world">Hello world!</string>
+
 
 </resources>

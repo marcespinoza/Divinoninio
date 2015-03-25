@@ -12,13 +12,7 @@ import android.view.ViewGroup;
 public class fragment1 extends Fragment {
 
 
-    public static fragment1 newInstance() {
-        fragment1 fragment = new fragment1();
-         return fragment;
-    }
 
-    public fragment1() {
-    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

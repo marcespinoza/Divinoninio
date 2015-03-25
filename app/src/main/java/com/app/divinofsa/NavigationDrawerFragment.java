@@ -116,12 +116,16 @@ public class NavigationDrawerFragment extends Fragment {
         navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 
         // agregar un nuevo item al menu deslizante
-        // Favoritos
-        navDrawerItems.add(new NavDrawerItem((navMenuTitles[0]), navMenuIcons.getResourceId(0, -1)));
-        // Pedidos
+        // Inicio
+        navDrawerItems.add(new NavDrawerItem((navMenuTitles[0]), navMenuIcons.getResourceId(0,0)));
+        // Avisos
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
-        // Catologo
+       //Oraciones
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+        //Testimonios
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
+        //como llegar
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
 
         adapter = new NavDrawerListAdapter(getActivity().getApplicationContext(),
                 navDrawerItems);

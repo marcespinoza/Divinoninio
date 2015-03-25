@@ -6,19 +6,14 @@ public class NavDrawerItem {
 	private int icon;
 
 	
-	public NavDrawerItem(){}
+
 
 	public NavDrawerItem(String title, int icon){
 		this.title = title;
 		this.icon = icon;
 	}
 	
-	public NavDrawerItem(String title, int icon, boolean isCounterVisible, String count){
-		this.title = title;
-		this.icon = icon;
 
-
-	}
 	
 	public String getTitle(){
 		return this.title;

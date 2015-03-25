@@ -2,6 +2,7 @@ package com.app.divinofsa;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -90,6 +91,34 @@ public class MainActivity extends ActionBarActivity
                         .commit();
             }
         }
+        if(position==2){
+            fragment = fragmentManager.findFragmentByTag("fragment3");
+            Log.i("instancia","instancia "+ fragment);
+            if(fragment==null){
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container,new fragment3(),"fragment3")
+                        .addToBackStack(null)
+                        .commit();
+            }else{
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment, "fragment3")
+                        .commit();
+            }
+        }
+        if(position==3){
+            fragment = fragmentManager.findFragmentByTag("fragment4");
+            Log.i("instancia","instancia "+ fragment);
+            if(fragment==null){
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container,new fragment4(),"fragment4")
+                        .addToBackStack(null)
+                        .commit();
+            }else{
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment, "fragment4")
+                        .commit();
+            }
+        }
 
 
 
@@ -143,9 +172,10 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        if (id == R.id.galeria) {
+            Intent galeria = new Intent(this, Galeria.class);
+            this.startActivity(galeria);
+                   }
 
         return super.onOptionsItemSelected(item);
     }
