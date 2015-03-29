@@ -46,7 +46,6 @@ public class fragment2 extends Fragment{
         View rootView = inflater.inflate(R.layout.fragment2, container, false);
         aviso = (TextView) rootView.findViewById(R.id.textoAviso);
         circleProgressBar= (CircleProgressBar) rootView.findViewById(R.id.progressBar);
-
         return rootView;}
 
     @Override
@@ -61,10 +60,8 @@ public class fragment2 extends Fragment{
        cs = new ConnectionState(getActivity().getApplicationContext());
         Boolean flag = cs.checkInternetConn();
         if(flag){
-        if(texto==""){
-         new obtenerAviso().execute();
-
-        }}else{
+           new obtenerAviso().execute();
+        }else{
             sp = getActivity().getSharedPreferences("aviso",0);
             aviso.setText(sp.getString("aviso","Ops! no tienes conexion"));
         }

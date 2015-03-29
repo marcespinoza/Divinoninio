@@ -2,6 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
-    <item android:id="@+id/galeria" android:title="Galeria"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/galeria"
+        android:title="Galeria"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+    <item android:id="@+id/compartir"
+        android:title="Compartir aplicacion"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item android:id="@+id/leer"
+        android:title="Leer"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
 </menu>
