@@ -1,12 +1,16 @@
 package com.app.divinofsa;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,12 +50,14 @@ public class fragment4 extends Fragment {
     ArrayList<String>idtestimonio = new ArrayList<>();
     TestimonioAdapter adapterTestimonio;
     ConnectionState cs;
+    View rootView;
+   AsyncTask asyncTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment4, container, false);
+         if(rootView==null){
+        rootView = inflater.inflate(R.layout.fragment4, container, false);
         listaTestimonio = (ListView) rootView.findViewById(R.id.listTestimonios);
         listaTestimonio.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -62,20 +68,25 @@ public class fragment4 extends Fragment {
         Typeface type = Typeface.createFromAsset(getActivity().getAssets(), "fonts/GeosansLight.ttf");
         textoTestimonio = (TextView) rootView.findViewById(R.id.textTestimonios);
         textoTestimonio.setTypeface(type);
-        textoTestimonio.setMovementMethod(new ScrollingMovementMethod());
+        textoTestimonio.setMovementMethod(new ScrollingMovementMethod());cs = new ConnectionState(getActivity().getApplicationContext());
+             Boolean flag = cs.checkInternetConn();
+             if(flag){
+                asyncTask = new MyAsyncTask().execute();
+             }else{
+                 textoTestimonio.setText("No tienes conexion a internet");
+             }}
+        getActionBar().setTitle(R.string.seccion4);
         return rootView;
+    }
+
+    private ActionBar getActionBar() {
+        return ((ActionBarActivity) getActivity()).getSupportActionBar();
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstance){
         super.onCreate(savedInstance);
-        cs = new ConnectionState(getActivity().getApplicationContext());
-        Boolean flag = cs.checkInternetConn();
-        if(flag){
-             new MyAsyncTask().execute();
-            }else{
-            textoTestimonio.setText("No tienes conexion a internet");
-        }
+
     }
 
     private class MyAsyncTask extends AsyncTask<Void, Void, Boolean> {
@@ -208,6 +219,20 @@ public class fragment4 extends Fragment {
             }
 
             return;
+        }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(4);
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+         //check the state of the task
+        if((asyncTask != null) && (asyncTask.getStatus() == AsyncTask.Status.RUNNING)){
+            asyncTask.cancel(true);
         }
     }
 

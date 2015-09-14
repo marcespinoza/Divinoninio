@@ -9,9 +9,16 @@
     <item android:id="@+id/compartir"
         android:title="Compartir aplicacion"
         android:orderInCategory="2"
+        app:showAsAction="never"
+        app:actionProviderClass=
+            "android.support.v7.widget.ShareActionProvider"/>
+    <item android:id="@+id/escribime"
+        android:title="Escríbeme"
+        android:orderInCategory="4"
         app:showAsAction="never" />
     <item android:id="@+id/leer"
         android:title="Leer"
         android:orderInCategory="3"
         app:showAsAction="never" />
+
 </menu>

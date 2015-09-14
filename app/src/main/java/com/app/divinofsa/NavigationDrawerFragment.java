@@ -126,6 +126,8 @@ public class NavigationDrawerFragment extends Fragment {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
         //como llegar
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
+        //radio
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
 
         adapter = new NavDrawerListAdapter(getActivity().getApplicationContext(),
                 navDrawerItems);

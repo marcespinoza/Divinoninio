@@ -11,5 +11,8 @@
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
     </style>
+    <style name="CustomTextViewStyle">
+        <item name="font">@string/FONT_HELVETICA</item>
+    </style>
 
 </resources>

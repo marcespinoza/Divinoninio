@@ -1,5 +1,6 @@
 package com.app.divinofsa;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,4 +21,9 @@ public class fragment1 extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment1, container, false);
 
         return rootView;}
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(1);
+    }
 }

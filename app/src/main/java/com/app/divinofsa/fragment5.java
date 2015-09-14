@@ -1,6 +1,7 @@
 package com.app.divinofsa;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -44,7 +45,7 @@ public class fragment5 extends Fragment {
 
                // Move the camera instantly to hamburg with a zoom of 15.
                map.moveCamera(CameraUpdateFactory.newLatLngZoom(DivinoNinio, 5));
-
+               map.setMyLocationEnabled(true);
                // Zoom in, animating the camera.
                map.animateCamera(CameraUpdateFactory.zoomTo(16), 2000, null);
                if(mapFragment == null) new Handler().postDelayed(this, 500);
@@ -58,4 +59,9 @@ public class fragment5 extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(5);
+    }
 }

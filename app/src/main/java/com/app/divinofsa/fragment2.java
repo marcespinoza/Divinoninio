@@ -20,7 +20,6 @@ import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -38,14 +37,26 @@ public class fragment2 extends Fragment{
    ConnectionState cs;
     SharedPreferences sp;
     CircleProgressBar circleProgressBar;
-
+    View rootView;
+    AsyncTask asyncTaskAviso;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment2, container, false);
+        //Cuando la instancia del fragment es agregado al backstack no se destruye su vista, entonces solo la primera vez
+        //inflo la vista, la segunda vez que selecciono nuevamente el fragment, si no es nula la vista
+        //solo devuelvo la misma y asi conservo todos los datos de mi vista sin refrescar.
+        if(rootView==null){
+        rootView = inflater.inflate(R.layout.fragment2, container, false);
         aviso = (TextView) rootView.findViewById(R.id.textoAviso);
         circleProgressBar= (CircleProgressBar) rootView.findViewById(R.id.progressBar);
+        cs = new ConnectionState(getActivity().getApplicationContext());
+        Boolean flag = cs.checkInternetConn();
+        if(flag){
+             asyncTaskAviso = new obtenerAviso().execute();
+         }else{
+             sp = getActivity().getSharedPreferences("aviso",0);
+             aviso.setText(sp.getString("aviso","Ops! no tienes conexion"));
+         }}
         return rootView;}
 
     @Override
@@ -56,15 +67,7 @@ public class fragment2 extends Fragment{
     @Override
     public void onActivityCreated(Bundle savedInstance){
         super.onCreate(savedInstance);
-        Log.i("texto","texto "+texto);
-       cs = new ConnectionState(getActivity().getApplicationContext());
-        Boolean flag = cs.checkInternetConn();
-        if(flag){
-           new obtenerAviso().execute();
-        }else{
-            sp = getActivity().getSharedPreferences("aviso",0);
-            aviso.setText(sp.getString("aviso","Ops! no tienes conexion"));
-        }
+
     }
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -89,7 +92,7 @@ public class fragment2 extends Fragment{
                 mFTPClient.enterLocalPassiveMode();
                 return status;
             }else{
-                Toast.makeText(getActivity(), "Sin respuesta del servidor", Toast.LENGTH_LONG).show();
+                Log.i("no se pudo conectar","error");
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -146,5 +149,14 @@ public class fragment2 extends Fragment{
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(2);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //check the state of the task
+        if((asyncTaskAviso != null) && (asyncTaskAviso.getStatus() == AsyncTask.Status.RUNNING)){
+            asyncTaskAviso.cancel(true);
+        }
     }
 }
